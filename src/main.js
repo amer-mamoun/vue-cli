@@ -8,7 +8,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./scss/main.scss";
 import "normalize.css";
 
+import "./filters";
+
 Vue.config.productionTip = false;
+
+// Make Dynamic font size custome directive
+Vue.directive("font", {
+    bind: function(el, binding) {
+        el.style.fontSize = binding.value + "px";
+    }
+});
 
 new Vue({
     router,
